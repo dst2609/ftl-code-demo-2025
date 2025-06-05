@@ -1,0 +1,53 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #ffcb05;
+    color: #3d7dca;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #3d7dca;
+    color: #ffcb05;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-container {
+    padding: 20px;
+    display: flex;
+    flex-flow:row wrap;
+    /* flex:1; */
+
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin: 10px;
+    text-align: center;
+    flex:6;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    margin: 5px;
+}
+
+
+@media screen and (max-width: 767px){
+    .card {
+        background-color: green;
+    }
+}
+
+@media screen and (max-width: 1023px) and (min-width:768px){
+    .card {
+        background-color: purple;
+    }
+}
