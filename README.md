@@ -26,6 +26,8 @@ This repository is licensed under the MIT License. See the LICENSE file for more
 
 ## Acknowledgements
 
+Alex Linden `Alex-Linden`, for being an amazing instructor and contributing to this repository
+
 ## Contact
 
 Devarsh Thaker - devarsh.thaker.site@codepath.org
