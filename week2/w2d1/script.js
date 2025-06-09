@@ -10,8 +10,8 @@ const showMessage1 = () => {
 
   // change the innerText of the messageElement
   messageElement.innerText =
-    "Button 1 was clicked! Horray! we just learned event listeneres.";
+    "Button 1 was clicked! Horray! we just learned event listeners.";
 };
 
-// Register the event listeneres for the button
+// Register the event listeners for the button
 button1.addEventListener("click", showMessage1);
