@@ -1,0 +1,46 @@
+{
+  "playlists": [
+    {
+      "playlistId": 1,
+      "name": "Chill Vibes",
+      "author": "Alice",
+      "art": "image3.jpeg",
+      "likes": 42,
+      "songs": [
+        {
+          "songID": 101,
+          "title": "Morning Sun",
+          "artist": "Sunrise Band",
+          "duration": "3:45"
+        },
+        {
+          "songID": 102,
+          "title": "Late Night Drive",
+          "artist": "Night Riders",
+          "duration": "4:20"
+        }
+      ]
+    },
+    {
+      "playlistID": 2,
+      "playlist_name": "Workout Hits",
+      "playlist_author": "Bob",
+      "playlist_art": "image2.jpeg",
+      "likes": 58,
+      "songs": [
+        {
+          "songID": 201,
+          "title": "Pump It Up",
+          "artist": "Gym Beats",
+          "duration": "3:30"
+        },
+        {
+          "songID": 202,
+          "title": "Endurance",
+          "artist": "Run Fast",
+          "duration": "2:50"
+        }
+      ]
+    }
+  ]
+}
