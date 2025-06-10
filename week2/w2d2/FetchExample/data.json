@@ -1,10 +1,10 @@
 {
   "playlists": [
     {
-      "playlistId": 1,
-      "name": "Chill Vibes",
-      "author": "Alice",
-      "art": "image3.jpeg",
+      "playlistID": 1,
+      "playlist_name": "Chill Vibes",
+      "playlist_author": "Alice",
+      "playlist_art": "image3.jpeg",
       "likes": 42,
       "songs": [
         {

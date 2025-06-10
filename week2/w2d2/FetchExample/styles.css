@@ -1,0 +1,152 @@
+/* Global reset & base */
+body {
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* -------------------
+     Playlist Grid
+     ------------------- */
+.playlist-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+/* -------------------
+     Playlist Card
+     ------------------- */
+.playlist-tile {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.playlist-tile:hover {
+  transform: scale(1.05);
+}
+
+.playlist-tile img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.playlist-tile h3 {
+  margin: 8px 0 4px;
+  font-size: 1.1em;
+}
+
+.playlist-tile p {
+  margin: 0 0 8px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* -------------------
+     Like (heart) toggle
+     ------------------- */
+.heart-icon {
+  font-size: 1.2em;
+  cursor: pointer;
+  user-select: none;
+  color: #aaa;
+}
+
+.heart-icon.liked {
+  color: #e74c3c;
+}
+
+.like-count {
+  margin-left: 4px;
+  font-size: 0.9em;
+  vertical-align: middle;
+}
+
+/* -------------------
+     Modal Overlay (hidden by default)
+     ------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* Show & center it when needed */
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------------
+     Modal Content Box
+     ------------------- */
+.modal-content {
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Constrain any large cover images */
+.modal-content img {
+  width: 100%;
+  /* max-height: 200px; */
+  max-height: 60vh;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Modal text & list styling */
+.modal-content h3 {
+  margin-top: 12px;
+}
+
+.modal-content p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0 0;
+}
+
+.modal-content li {
+  margin-bottom: 4px;
+  font-size: 0.9em;
+}
