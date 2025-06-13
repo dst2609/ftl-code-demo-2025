@@ -1,0 +1,117 @@
+/* Overlay background */
+.modal {
+  position: fixed;
+  inset: 0; /* shorthand for top/right/bottom/left = 0 */
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal window */
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 85%;
+  overflow-y: auto;
+  position: relative;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Header / close button */
+.modal-header {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.modal-header button {
+  background: #eee;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.modal-header button:hover {
+  background: #ddd;
+}
+
+/* Body content */
+.modal-body {
+  margin-top: 2.5rem; /* leave room for close button */
+  color: #333;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+/* Loading state */
+.modal-body p {
+  text-align: center;
+  font-style: italic;
+}
+
+/* Pokémon details */
+.details h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.details img {
+  display: block;
+  width: 120px;
+  height: auto;
+  margin: 0 auto 1rem;
+}
+
+.details p {
+  margin: 0.5rem 0;
+}
+
+.details h3 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.details li {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
