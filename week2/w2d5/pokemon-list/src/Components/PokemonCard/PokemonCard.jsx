@@ -1,10 +1,10 @@
 import React from "react";
 import "./PokemonCard.css";
 
-const PokemonCard = ({ name }) => {
+const PokemonCard = ({ name, onClick }) => {
   return (
     <>
-      <div className="pokemon-item">
+      <div className="pokemon-item" onClick={onClick}>
         <img
           src={`https://img.pokemondb.net/artwork/large/${name}.jpg`}
           alt={name}
