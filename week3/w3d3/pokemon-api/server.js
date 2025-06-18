@@ -3,10 +3,10 @@ const express = require("express");
 const app = express(); //its gets all the express functions/functionalities in the app variable
 const port = 3000;
 
-app.use(express.json())
+app.use(express.json());
 
 let pokemonList = [
- {
+  {
     "id": 1,
     "name": "Bulbasaur",
     "type": "Grass/Poison",
@@ -35,7 +35,7 @@ let pokemonList = [
     "imageUrl": "https://img.pokemondb.net/artwork/large/pikachu.jpg"
   }
 
-]
+];
 
 app.get("/", (req, res) => {
   res.send("Hello World, I am awake!");
@@ -43,16 +43,16 @@ app.get("/", (req, res) => {
 
 // Read all pokemon
 app.get("/pokemon", (req, res) => {
-  res.json(pokemonList )
-})
+  res.json(pokemonList);
+});
 
 // Read one pokemon
 app.get("/pokemon/:id", (req, res) => {
-  let pokemonId = parseInt(req.params.id)
-  const pokemon = pokemonList.find((p) => p.id === pokemonId)
+  let pokemonId = parseInt(req.params.id);
+  const pokemon = pokemonList.find((p) => p.id === pokemonId);
 
-  res.json(pokemon)
-})
+  res.json(pokemon);
+});
 // "id": 2,
 //     "name": "Charmander",
 //     "type": "Fire",
@@ -60,18 +60,35 @@ app.get("/pokemon/:id", (req, res) => {
 //     "imageUrl": "https://img.pokemondb.net/artwork/large/charmander.jpg"
 // Create a Pokemon
 app.post("/pokemon", (req, res) => {
-  const pokemonData = req.body
-  console.log(pokemonData)
-  let pokemon = {}
-  pokemon.id = pokemonList.length + 1
-  pokemon.name = pokemonData.name || ""
-  pokemon.type = pokemonData.type || "unknown"
-  pokemon.description = pokemonData.description || ""
-  pokemon.imageUrl = `https://img.pokemondb.net/artwork/large/${pokemonData.name.toLowerCase()}.jpg`
-  pokemonList.push(pokemon)
-  console.log(pokemon)
-  res.status(201).json(pokemon)
-})
+  const pokemonData = req.body;
+  console.log(pokemonData);
+  let pokemon = {};
+  pokemon.id = pokemonList.length + 1;
+  pokemon.name = pokemonData.name || "";
+  pokemon.type = pokemonData.type || "unknown";
+  pokemon.description = pokemonData.description || "";
+  pokemon.imageUrl = `https://img.pokemondb.net/artwork/large/${pokemonData.name.toLowerCase()}.jpg`;
+  pokemonList.push(pokemon);
+  console.log(pokemon);
+  res.status(201).json(pokemon);
+});
+
+
+// Update
+app.put("/pokemon/:id", (req, res) => {
+  const pokemonData = req.body;
+  const pokemonId = parseInt(req.params.id);
+
+  const pokemon = pokemonList.find((p) => p.id === pokemonId);
+  pokemon.id = pokemonData.id || pokemon.id;
+  pokemon.name = pokemonData.name || pokemon.name;
+  pokemon.type = pokemonData.type || pokemon.type;
+  pokemon.description = pokemonData.description || pokemon.description;
+  pokemon.imageUrl = pokemonData.name ? `https://img.pokemondb.net/artwork/large/${pokemonData.name.toLowerCase()}.jpg` : pokemon.imageUrl;
+
+  res.status(202).send(pokemon);
+
+});
 
 app.listen(port, () => {
   console.log(`Server running at https://localhost:${port}`);
