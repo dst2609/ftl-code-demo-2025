@@ -5,9 +5,9 @@ const router = express.Router();
 const controller = require("../controllers/pokemonController");
 
 router.get("/", controller.getAll);
-// router.get("/:id", dosometing - arrow function)
-// router.post("/", dosometing - arrow function)
-// router.put("/:id", dosometing - arrow function)
-// router.delete("/:id", dosometing - arrow function)
+router.get("/:id", controller.getById);
+router.post("/", controller.create);
+router.put("/:id", controller.update);
+router.delete("/:id", controller.remove);
 
 module.exports = router;
