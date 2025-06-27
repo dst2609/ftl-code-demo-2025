@@ -48,6 +48,7 @@ app.get("/pokemon", (req, res) => {
 
 // Read one pokemon
 app.get("/pokemon/:id", (req, res) => {
+  console.log(req);
   let pokemonId = parseInt(req.params.id);
   const pokemon = pokemonList.find((p) => p.id === pokemonId);
 
