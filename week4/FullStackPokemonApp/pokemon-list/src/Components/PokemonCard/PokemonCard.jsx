@@ -6,7 +6,7 @@ const PokemonCard = ({ name, onClick }) => {
     <>
       <div className="pokemon-item" onClick={onClick}>
         <img
-          src={`https://img.pokemondb.net/artwork/large/${name}.jpg`}
+          src={`https://img.pokemondb.net/artwork/large/${name.toLowerCase()}.jpg`}
           alt={name}
         />
         <h4>{name}</h4>
