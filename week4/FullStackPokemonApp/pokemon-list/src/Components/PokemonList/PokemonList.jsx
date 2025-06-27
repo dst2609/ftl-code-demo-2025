@@ -21,6 +21,10 @@ const PokemonList = () => {
     fetchList();
   }, []);
 
+  function handleCardClick(name){
+    console.log(name)
+  }
+
   return (
     <>
       <div className="pokemon-list">
