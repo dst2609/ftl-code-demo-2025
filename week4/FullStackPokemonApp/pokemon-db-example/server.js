@@ -4,6 +4,7 @@ const express = require("express");
 const morgan = require("morgan");
 const app = express();
 const pokemonRoutes = require("./routes/pokemonRoutes");
+const userRoutes = require("./routes/userRoutes")
 
 const corsOption = {
   origin: "http://localhost:5173",
@@ -13,6 +14,7 @@ const corsOption = {
 app.use(cors(corsOption));
 app.use(morgan("dev"));
 app.use(express.json());
+app.use("/user", userRoutes);
 app.use("/pokemon", pokemonRoutes);
 
 const PORT = process.env.PORT; //port from .env file
