@@ -14,9 +14,10 @@ generator client {
 }
 
 model Pokemon {
-  id          Int     @id @default(autoincrement())
-  name        String  @unique
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
   type        String
   description String?
+  imageUrl    String?
   createdAt   DateTime @default(now())
 }
