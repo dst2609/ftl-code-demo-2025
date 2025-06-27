@@ -1,0 +1,21 @@
+/* Container for all the cards */
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fafafa;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Loading / empty state */
+.pokemon-list:empty::before {
+  content: "Loading Pokémon...";
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  padding: 2rem 0;
+}
