@@ -22,7 +22,7 @@ const Register = ({setIsLoggedIn}) => {
         { username, password }
       );
 
-      //store the toekn in the localstorage as token
+      //store the token in the localstorage as token
       localStorage.setItem("token", loginResponse.data.token);
       setIsLoggedIn(true);
       navigate("/");
