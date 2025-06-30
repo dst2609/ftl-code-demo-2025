@@ -6,7 +6,7 @@ import "./Register.css";
 const Register = ({setIsLoggedIn}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   //handle register
   const handleRegister = async () => {
@@ -25,7 +25,7 @@ const Register = ({setIsLoggedIn}) => {
       //store the toekn in the localstorage as token
       localStorage.setItem("token", loginResponse.data.token);
       setIsLoggedIn(true);
-    //   navigate("/");
+      navigate("/");
     } catch (error) {
       alert("Registration failed. Try again");
     }

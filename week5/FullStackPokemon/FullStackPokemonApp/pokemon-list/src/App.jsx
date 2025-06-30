@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import PokemonList from "./Components/PokemonList/PokemonList";
 import Login from "./Components/Login/Login";
@@ -10,16 +10,18 @@ const App = () => {
 
   return (
     <>
-      <div className="App">
-        {!isLoggedIn ? (
-          <>
-            <Login setIsLoggedIn={setIsLoggedIn} />
-            <Register setIsLoggedIn={setIsLoggedIn} />
-          </>
-        )
-          : <button onClick={() => setIsLoggedIn(false)}>Logout</button>}
+      <div className="app">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />} />
+            {/*
 
-        <PokemonList />
+              : <button onClick={() => setIsLoggedIn(false)}>Logout</button>} */}
+
+            <Route path="/" element={<PokemonList />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </>
   );

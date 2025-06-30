@@ -6,7 +6,7 @@ import "./Login.css";
 const Login = ({setIsLoggedIn}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
@@ -17,7 +17,7 @@ const Login = ({setIsLoggedIn}) => {
       //store token in localStorage
       localStorage.setItem("token", response.data.token);
       setIsLoggedIn(true);
-    //   navigate("/");
+      navigate("/");
     } catch (error) {
       alert(error, "Login failed, check credentials"); //for demo, IRL change this to dyncamically show error
     }
