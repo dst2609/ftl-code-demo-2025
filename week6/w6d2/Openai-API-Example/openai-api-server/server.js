@@ -15,7 +15,7 @@ app.use(morgan("dev"));
 //use rate limiter here
 app.use(rateLimiter);
 
-// app.use("/api/chat", chatRoutes);
+app.use("/api/chat", chatRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
